@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -13,13 +14,14 @@ const NavBar = () => {
       <div className="relative container-fluid border-b-1 border-black bg-custom-bg  shadow-sm">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center   py-6 md:space-x-20">
-            {/* Logo */}
             <div className="flex items-center lg:flex-none">
-              <a href="#">
-                <span className="text-black text-lg font-bold sm:text-xl">
-                  Aj-Ai
-                </span>
-              </a>
+              <Link
+                href="/"
+                className="text-black text-lg font-bold sm:text-xl md:mr-16"
+              >
+             AJ-AI SASS
+
+              </Link>
             </div>
 
             {/* Navigation Links */}
@@ -186,18 +188,18 @@ const NavBar = () => {
 
             {/* Sign-in/Sign-up Buttons */}
             <div className="hidden md:flex items-center justify-end lg:w-auto">
-              <a
-                href="#"
-                className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
+              <Link
+                href="/sign-in "
+                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
               >
-                Sign in
-              </a>
-              <a
-                href="#"
+                Sign In
+              </Link>
+              <Link
+                href="/sign-up "
                 className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
               >
                 Sign up
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -270,19 +272,26 @@ const NavBar = () => {
                   Docs
                 </a>
               </div>
-              <div>
-                <a
-                  href="#"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+              <div className="">
+                <Link
+                  href="/sign-up "
+                  className="w-full flex items-center justify-center
+                  px-4 py-2 border border-transparent rounded-md shadow-sm
+                  text-base font-medium text-white bg-indigo-600
+                  hover:bg-indigo-700 mb-3"
                 >
-                  Sign up
-                </a>
-                <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  Existing customer?
-                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                    Sign in
-                  </a>
-                </p>
+                  {" "}
+                  Sign-Up
+                </Link>
+                <Link
+                  href="/sign-in"
+                  className="w-full flex items-center justify-center
+                  px-4 py-2 border border-transparent rounded-md shadow-sm
+                  text-base font-medium text-white bg-indigo-600
+                  hover:bg-indigo-700"
+                >
+                  Sign In
+                </Link>
               </div>
             </div>
           </div>
