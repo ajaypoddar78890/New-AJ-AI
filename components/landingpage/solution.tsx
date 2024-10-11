@@ -1,43 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { CheckCircle } from "lucide-react";
 
 const Solution = () => {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Animation for the left divs (slide from left)
-    gsap.from(".left", {
-      x: -200,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".left",
-        start: "top 80%", // Start the animation when 80% of the div is in view
-        end: "bottom 20%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    // Animation for the right divs (slide from right)
-    gsap.from(".right", {
-      x: 200,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".right",
-        start: "top 80%", // Start the animation when 80% of the div is in view
-        end: "bottom 20%",
-        toggleActions: "play none none none",
-      },
-    });
-  }, []);
-
   return (
     <div className="solution-section py-20 ">
       <div className="container mx-auto px-10">
         <div className="grid md:grid-cols-2 gap-16">
+          {" "}
           <div className="left w-full h-auto">
             <Image
               alt="left image"
@@ -48,8 +18,9 @@ const Solution = () => {
               className="object-cover"
             />
           </div>
-          <div className="right w-full h-auto flex flex-col pt-10 px-6 md:px-12">
-            <h2 className="text-2xl md:text-6xl font-bold mb-8">
+          <div className="right w-full h-auto flex flex-col  pt-10 px-6 md:px-12  ">
+            {" "}
+            <h2 className="text-2xl md:text-6xl   font-bold mb-8">
               Accessible to a wider audience
             </h2>
             <p className="text-lg font-medium mb-4">
@@ -62,26 +33,48 @@ const Solution = () => {
               to solve complex problems without requiring technical expertise.
             </p>
           </div>
-          <div className="right w-full h-auto flex flex-col pt-10 px-6 md:px-12">
-            <h2 className="text-2xl md:text-6xl font-bold mb-8">
-              Accessible to a wider audience
+        </div>
+        <div className="grid md:grid-cols-2 gap-16 mt-10 md:mt-32">
+          <div className="right w-full h-auto flex flex-col    px-6 md:px-12  ">
+            {" "}
+            <h2 className="text-2xl md:text-6xl   font-bold mb-8">
+              Providing quick deploy solutions
             </h2>
-            <p className="text-lg font-medium mb-4">
-              Advanced AI capabilities accessible to a broader audience,
-              including small & medium-sized businesses and individuals who may
-              not have the resources or expertise to develop.
-            </p>
             <p className="text-lg">
-              Our platform enables users to leverage cutting-edge AI technology
-              to solve complex problems without requiring technical expertise.
+              Our AI SaaS solutions can be quickly deployed, enabling users to
+              start benefiting from AI capabilities without lengthy setup and
+              development times in fast-paced industries.
             </p>
+            <ul className="space-y-4 mt-10 font-semibold">
+              <li className="flex items-start ">
+                <CheckCircle className="text-black w-6 h-6 mr-3" />{" "}
+                {/* Check Icon */}
+                <span className="text-lg">
+                  Fast deployment with minimal configuration.
+                </span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="text-black w-6 h-6 mr-3" />{" "}
+                {/* Check Icon */}
+                <span className="text-lg">
+                  Tailored AI solutions for various industries.
+                </span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="text-check w-6 h-6 mr-3" />{" "}
+                {/* Check Icon */}
+                <span className="text-lg">
+                  Seamless integration into existing workflows.
+                </span>
+              </li>
+            </ul>
           </div>
           <div className="left w-full h-auto">
             <Image
               alt="left image"
-              src="/assets/images/content-image-1.webp"
+              src="/assets/images/content-image-2.webp"
               layout="responsive"
-              width={700}
+              width={600}
               height={600}
               className="object-cover"
             />
