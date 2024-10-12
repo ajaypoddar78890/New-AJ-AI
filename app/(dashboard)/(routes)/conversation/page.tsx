@@ -48,17 +48,40 @@ const Page = () => {
         messages: newMessages,
       });
 
-      // Assuming the response contains a specific structure; adjust as needed
-      const assistantReply =
-        response.data?.reply || response.data?.generated_text || "No response"; // Adjust based on Google API response
+      // Log the complete response for debugging
+      console.log("API Response:", response.data);
 
-      // Update messages
-      setMessages((prev: Message[]) => [
-        ...prev,
-        { role: "assistant", content: assistantReply },
-      ]);
+      // Extract the assistant's response from the API response
+      const parts = response.data?.response?.parts;
+
+      // Check if parts array exists and has at least one entry
+      if (Array.isArray(parts) && parts.length > 0) {
+        const assistantReply = parts[0]?.text || "No response";
+
+        // Update messages
+        setMessages((prev: Message[]) => [
+          ...prev,
+          { role: "assistant", content: assistantReply },
+        ]);
+      } else {
+        console.error("No parts returned in response.");
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: "Sorry, no response from the assistant.",
+          },
+        ]);
+      }
     } catch (error: unknown) {
-      console.error(error);
+      console.error("Error occurred:", error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: "Sorry, there was an error processing your request.",
+        },
+      ]);
     } finally {
       router.refresh();
     }
