@@ -40,52 +40,51 @@ const Page = () => {
         role: "user",
         content: values.prompt,
       };
-
-      const newMessages = [...message, userMessage];
-
+  
+      // Add the user's message to the top of the message list
+      setMessages((prev: Message[]) => [userMessage, ...prev]);
+  
       // API call to Google Generative AI
       const response = await axios.post("/api/conversation", {
-        messages: newMessages,
+        messages: [userMessage, ...message], // Pass the updated message list
       });
-
+  
       // Log the complete response for debugging
       console.log("API Response:", response.data);
-
+  
       // Extract the assistant's response from the API response
       const parts = response.data?.response?.parts;
-
+  
       // Check if parts array exists and has at least one entry
       if (Array.isArray(parts) && parts.length > 0) {
         const assistantReply = parts[0]?.text || "No response";
-
-        // Update messages
+  
+        // Add the assistant's response right below the user's message
         setMessages((prev: Message[]) => [
-          ...prev,
           { role: "assistant", content: assistantReply },
+          ...prev,
         ]);
       } else {
         console.error("No parts returned in response.");
         setMessages((prev) => [
+          { role: "assistant", content: "Sorry, no response from the assistant." },
           ...prev,
-          {
-            role: "assistant",
-            content: "Sorry, no response from the assistant.",
-          },
         ]);
       }
+  
+      // Clear the form after submission
+      form.reset();
     } catch (error: unknown) {
       console.error("Error occurred:", error);
       setMessages((prev) => [
+        { role: "assistant", content: "Sorry, there was an error processing your request." },
         ...prev,
-        {
-          role: "assistant",
-          content: "Sorry, there was an error processing your request.",
-        },
       ]);
     } finally {
       router.refresh();
     }
   };
+  
 
   return (
     <div>
@@ -132,10 +131,29 @@ const Page = () => {
 
         <div>
           {message.map((msg, index) => (
-            <p key={index} className="mt-4 p-2 border-b">
-              <strong>{msg.role === "user" ? "You" : "Assistant"}:</strong>{" "}
-              {msg.content}
-            </p>
+            <div
+              key={index}
+              className={`mt-4 p-4 rounded-lg shadow-sm ${
+                msg.role === "user" ? "bg-blue-50" : "bg-gray-100"
+              }`}
+            >
+              <strong
+                className={`block mb-5 font- ${
+                  msg.role === "user" ? "text-blue-600" : "text-green-600"
+                }`}
+              >
+                {msg.role === "user" ? "You" : "Assistant"}:
+              </strong>
+
+              {/* Display the response as a list if multiple sentences */}
+              <ul className="list-disc pl-5">
+                {msg.content.split("\n").map((line, i) => (
+                  <li key={i} className="text-gray-700 leading-relaxed">
+                    {line}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </div>
