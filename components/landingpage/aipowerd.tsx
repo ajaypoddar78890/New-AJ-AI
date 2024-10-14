@@ -6,9 +6,7 @@ const AIPowerd = () => {
     <div className="aipowed-section px-10 py-10">
       <div className="container mx-auto max-w-7xl">
         <div className="grid md:grid-cols-2 gap-10">
-        
           <div className="left w-full relative" style={{ height: "500px" }}>
-        
             <Image
               alt="ai-powered-image"
               src="/assets/images/aipowerdimg.webp"
