@@ -87,10 +87,7 @@ export const CardTitle = ({
 }) => {
   return (
     <h3
-      className={cn(
-        "text-zinc-100 md:text-2xl  tracking-wide mt-4",
-        className
-      )}
+      className={cn("text-zinc-100 md:text-2xl  tracking-wide mt-4", className)}
     >
       {children}
     </h3>

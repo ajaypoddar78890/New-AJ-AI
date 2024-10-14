@@ -45,7 +45,7 @@ const tools = [
     icon: CodeIcon,
     color: "text-gray-500",
     bgColor: "bg-gray-500/10",
-    href: "/conversation",
+    href: "/code",
   },
 ];
 
