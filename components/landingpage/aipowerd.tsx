@@ -92,7 +92,7 @@ const AIPowerd = () => {
           <div className="right w-full flex flex-col">
             <div
               className="content p-6 bg-black text-white rounded-xl md:rounded-l-none py-10 border-b border-gray-500"
-              style={{ minHeight: "300px" }}
+              style={{ minHeight: "350px" }}
             >
               <h2 className="text-6xl font-bold my-4">
                 AI-powered to streamline tasks
@@ -105,7 +105,7 @@ const AIPowerd = () => {
             </div>
 
             <div
-              className="numbers bg-black h-full p-6 text-white flex justify-start items-center gap-5"
+              className="numbers bg-black h-full p-6 text-white flex justify-sta items-center"
               ref={numbersRef}
             >
               <div className="text-center ">
