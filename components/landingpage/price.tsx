@@ -46,7 +46,7 @@ const Price = () => {
             />
             <div className="toggle-bg w-16 h-8 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer transition-colors duration-500 ease-in-out">
               <div
-                className={`dot w-7 h-7 bg-gradient-to-r from-green-500 to-teal-500 rounded-full shadow-md transform duration-500 ease-in-out ${
+                className={`dot w-7 h-7  bg-orange-600 rounded-full shadow-md transform duration-500 ease-in-out ${
                   isYearly ? "translate-x-8" : "translate-x-0"
                 }`}
               />
@@ -71,7 +71,7 @@ const Price = () => {
         {/* Beginner Plan */}
         <div className="relative bg-white py-16 px-8 md:px-10 border rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
           {/* Popular badge */}
-          <span className="absolute top-4 right-4 px-3 py-1 text-sm font-semibold text-white bg-blue-500 rounded-full">
+          <span className="absolute top-4 right-4 px-3 py-1 text-sm font-semibold text-white bg-black rounded-full">
             Most Popular
           </span>
 
@@ -95,7 +95,7 @@ const Price = () => {
           </p>
 
           {/* CTA Button */}
-          <button className="w-full py-3 text-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg hover:from-blue-600 hover:to-indigo-600 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition duration-300 ease-in-out">
+          <button className="w-full py-3 text-lg font-semibold text-white b to-indigo-500 rounded-lg  bg-orange-600 focus:outline-none focus:ring-4  transition duration-300 ease-in-out">
             Get Started
           </button>
 
@@ -103,7 +103,7 @@ const Price = () => {
           <ul className="mt-8 space-y-2 text-left">
             <li className="flex items-center space-x-2 text-sm md:text-base text-gray-700">
               <svg
-                className="w-5 h-5 text-blue-500"
+                className="w-5 h-5 text-orange-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -120,7 +120,7 @@ const Price = () => {
             </li>
             <li className="flex items-center space-x-2 text-sm md:text-base text-gray-700">
               <svg
-                className="w-5 h-5 text-blue-500"
+                className="w-5 h-5 text-orange-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -137,7 +137,7 @@ const Price = () => {
             </li>
             <li className="flex items-center space-x-2 text-sm md:text-base text-gray-700">
               <svg
-                className="w-5 h-5 text-blue-500"
+                className="w-5 h-5 text-orange-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -157,7 +157,7 @@ const Price = () => {
 
         {/* Starter Plan */}
         <div className="relative bg-white py-16 px-8 md:px-10 border rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
-          <span className="absolute top-4 right-4 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded-full">
+          <span className="absolute top-4 right-4 px-3 py-1 text-sm font-semibold text-white bg-black rounded-full">
             Best Value
           </span>
 
@@ -181,7 +181,7 @@ const Price = () => {
           </p>
 
           {/* CTA Button */}
-          <button className="w-full py-3 text-lg font-semibold text-white bg-gradient-to-r from-green-500 to-teal-500 rounded-lg hover:from-green-600 hover:to-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-300 transition duration-300 ease-in-out">
+          <button className="w-full py-3 text-lg font-semibold text-white bg-gradient-to-r  rounded-lg bg-orange-600   focus:outline-none focus:ring-4   transition duration-300 ease-in-out">
             Get Started
           </button>
 
@@ -189,7 +189,7 @@ const Price = () => {
           <ul className="mt-8 space-y-2 text-left">
             <li className="flex items-center space-x-2 text-sm md:text-base text-gray-700">
               <svg
-                className="w-5 h-5 text-green-500"
+                className="w-5 h-5 text-orange-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -206,7 +206,7 @@ const Price = () => {
             </li>
             <li className="flex items-center space-x-2 text-sm md:text-base text-gray-700">
               <svg
-                className="w-5 h-5 text-green-500"
+                className="w-5 h-5 text-orange-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -223,7 +223,7 @@ const Price = () => {
             </li>
             <li className="flex items-center space-x-2 text-sm md:text-base text-gray-700">
               <svg
-                className="w-5 h-5 text-green-500"
+                className="w-5 h-5 text-orange-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -243,7 +243,7 @@ const Price = () => {
 
         {/* Pro Plan */}
         <div className="relative bg-white py-16 px-8 md:px-10 border rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-transform duration-300 ease-in-out">
-          <span className="absolute top-4 right-4 px-3 py-1 text-sm font-semibold text-white bg-purple-500 rounded-full">
+          <span className="absolute top-4 right-4 px-3 py-1 text-sm font-semibold text-white bg-black rounded-full">
             Premium
           </span>
 
@@ -267,7 +267,7 @@ const Price = () => {
           </p>
 
           {/* CTA Button */}
-          <button className="w-full py-3 text-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg hover:from-purple-600 hover:to-pink-600 focus:outline-none focus:ring-4 focus:ring-pink-300 transition duration-300 ease-in-out">
+          <button className="w-full py-3 text-lg font-semibold text-white bg-gradient-to-r  rounded-lg bg-orange-600   focus:outline-none focus:ring-4   transition duration-300 ease-in-out">
             Get Started
           </button>
 
@@ -275,7 +275,7 @@ const Price = () => {
           <ul className="mt-8 space-y-2 text-left">
             <li className="flex items-center space-x-2 text-sm md:text-base text-gray-700">
               <svg
-                className="w-5 h-5 text-purple-500"
+                className="w-5 h-5 text-orange-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -292,7 +292,7 @@ const Price = () => {
             </li>
             <li className="flex items-center space-x-2 text-sm md:text-base text-gray-700">
               <svg
-                className="w-5 h-5 text-purple-500"
+                className="w-5 h-5 text-orange-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -309,7 +309,7 @@ const Price = () => {
             </li>
             <li className="flex items-center space-x-2 text-sm md:text-base text-gray-700">
               <svg
-                className="w-5 h-5 text-purple-500"
+                className="w-5 h-5 text-orange-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
