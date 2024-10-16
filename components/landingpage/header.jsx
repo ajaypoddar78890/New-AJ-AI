@@ -19,8 +19,7 @@ const NavBar = () => {
                 href="/"
                 className="text-black text-lg font-bold sm:text-xl md:mr-16"
               >
-             AJ-AI SASS
-
+                AJ-AI
               </Link>
             </div>
 
