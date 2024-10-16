@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 import { useState } from "react";
 
@@ -19,7 +20,13 @@ const NavBar = () => {
                 href="/"
                 className="text-black text-lg font-bold sm:text-xl md:mr-16"
               >
-                AJ-AI
+                <Image
+                  src="/assets/images/logo.webp"
+                  alt="logo"
+                  height={100}
+                  width={100}
+                  className="h-auto w-auto max-w-[60px] sm:max-w-[80px] md:max-w-[100px] lg:max-w-[120px] transition-transform duration-300 ease-in-out hover:scale-105"
+                />
               </Link>
             </div>
 
@@ -28,13 +35,13 @@ const NavBar = () => {
               <div className="relative">
                 <button
                   type="button"
-                  className="group   rounded-md  inline-flex items-center text-base font-medium    "
+                  className="group   rounded-md  inline-flex items-center text-base font-semibold    "
                   onClick={() => {
                     setFlyer(!flyer);
                     setFlyerTwo(false);
                   }}
                 >
-                  <span className="text-lg font-medium hover:text-red-600">
+                  <span className="text-xl font-medium  hover:text-orange-600">
                     Solutions
                   </span>
                   <svg
@@ -101,10 +108,10 @@ const NavBar = () => {
                 </div>
               </div>
 
-              <a href="#" className="text-lg font-medium   hover:text-red-500 ">
+              <a href="#" className="text-xl font-medium    hover:text-orange-600 ">
                 Pricing
               </a>
-              <a href="#" className="text-lg font-medium   hover:text-red-500">
+              <a href="#" className="text-xl font-medium   hover:text-orange-600">
                 Docs
               </a>
 
@@ -117,7 +124,7 @@ const NavBar = () => {
                     setFlyer(false);
                   }}
                 >
-                  <span className="text-lg font-medium hover:text-red-500 ">
+                  <span className="text-xl font-medium hover:text-orange-600 ">
                     More
                   </span>
                   <svg

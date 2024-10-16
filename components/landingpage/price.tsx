@@ -24,7 +24,7 @@ const Price = () => {
 
       {/* Toggle for Monthly / Yearly pricing */}
       <div className="flex justify-center mb-10">
-        <div className="flex items-center px-8 py-4 rounded-full border-2 border-gray-300 bg-gradient-to-r from-gray-100 to-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg">
+        <div className="flex items-center px-8 py-4 rounded-full border-2 border-black bg-gradient-to-r from-gray-100 to-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg">
           {/* Monthly Text */}
           <span
             className={`${
