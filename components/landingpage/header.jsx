@@ -108,10 +108,16 @@ const NavBar = () => {
                 </div>
               </div>
 
-              <a href="#" className="text-xl font-medium    hover:text-orange-600 ">
+              <a
+                href="#"
+                className="text-xl font-medium    hover:text-orange-600 "
+              >
                 Pricing
               </a>
-              <a href="#" className="text-xl font-medium   hover:text-orange-600">
+              <a
+                href="#"
+                className="text-xl font-medium   hover:text-orange-600"
+              >
                 Docs
               </a>
 
@@ -195,17 +201,21 @@ const NavBar = () => {
             {/* Sign-in/Sign-up Buttons */}
             <div className="hidden md:flex items-center justify-end lg:w-auto">
               <Link
-                href="/sign-in "
-                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                href="/sign-in"
+                className="relative ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-black rounded-[2rem] shadow-sm text-base font-semibold text-black overflow-hidden group  hover:text-white"
               >
-                Sign In
+                <span className="absolute inset-0 bg-orange-600 transform -translate-y-full transition-all duration-500 group-hover:translate-y-0  " />
+                <span className="relative z-10 ">Sign In</span>
               </Link>
               <Link
-                href="/sign-up "
-                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                href="/sign-up"
+                className="relative ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-black rounded-[2rem] shadow-sm text-base font-semibold text-white bg-black overflow-hidden group  hover:text-white"
               >
-                Sign up
+                <span className="absolute inset-0 bg-orange-600 transform -translate-y-full transition-all duration-500 group-hover:translate-y-0  " />
+                <span className="relative z-10 ">Sign up</span>
               </Link>
+
+              
             </div>
           </div>
         </div>
@@ -283,7 +293,7 @@ const NavBar = () => {
                   href="/sign-up "
                   className="w-full flex items-center justify-center
                   px-4 py-2 border border-transparent rounded-md shadow-sm
-                  text-base font-medium text-white bg-indigo-600
+                  text-base font-medium text-white bg-black
                   hover:bg-indigo-700 mb-3"
                 >
                   {" "}
