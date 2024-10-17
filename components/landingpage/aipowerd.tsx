@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion"; // For animation
 
-const AIPowerd = () => {
+const AIPowered = () => {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
   const numbersRef = useRef(null);
@@ -14,7 +14,7 @@ const AIPowerd = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            startCounters();
+            startCounters(); // Start the counter animation
             observer.unobserve(entry.target); // Stop observing once animated
           }
         });
@@ -34,8 +34,8 @@ const AIPowerd = () => {
   }, []);
 
   const startCounters = () => {
-    animateCounter(setCount1, 0, Math.floor(0.92 * 100), 2000);
-    animateCounter(setCount2, 0, Math.floor(0.75 * 100), 2000);
+    animateCounter(setCount1, 0, Math.floor(0.92 * 100), 2000); // Animate count1 to 92%
+    animateCounter(setCount2, 0, Math.floor(0.75 * 100), 2000); // Animate count2 to 75%
   };
 
   const animateCounter = (setter, start, end, duration) => {
@@ -55,11 +55,11 @@ const AIPowerd = () => {
   };
 
   return (
-    <div className="aipowed-section px-10 py-10">
-      <div className="container mx-auto md:max-w-8xl">
-        <div className="grid md:grid-cols-[40%,60%] rounded-[3rem] overflow-hidden relative">
+    <div className="aipowered-section px-6 py-10 md:px-10">
+      <div className="container mx-auto md:max-w-7xl">
+        <div className="grid md:grid-cols-2 rounded-3xl overflow-hidden relative xl:h-[60vh]">
           {/* Left Side: Image */}
-          <div className="left relative" style={{ height: "500px" }}>
+          <div className="relative h-60 md:h-auto">
             <Image
               alt="ai-powered-image"
               src="/assets/images/aipowerdimg.webp"
@@ -76,6 +76,7 @@ const AIPowerd = () => {
                 className="bg-transparent rounded-full p-4 shadow-lg flex items-center justify-center"
                 whileHover={{ scale: 1.2 }} // Animation on hover
                 whileTap={{ scale: 0.9 }} // Animation on click
+                aria-label="Play video"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -88,37 +89,36 @@ const AIPowerd = () => {
               </motion.a>
             </div>
           </div>
+
           {/* Right Side: Content */}
-          <div className="right w-full flex flex-col">
-            <div
-              className="content p-6 bg-black text-white rounded-xl md:rounded-l-none py-10 border-b border-gray-500"
-              style={{ minHeight: "350px" }}
-            >
-              <h2 className="text-6xl font-bold my-4">
+          <div className="flex flex-col justify-between bg-black text-white p-6 rounded-xl md:rounded-l-none">
+            <div className="content py-6 md:py-10">
+              <h2 className="text-3xl md:text-5xl font-bold my-4">
                 AI-powered to streamline tasks
               </h2>
-              <p className="text-md">
+              <p className="text-sm md:text-lg">
                 As your business grows or your AI SaaS needs change, you can
                 easily adjust your subscription level to match those needs. This
                 flexibility ensures that AI remains an asset.
               </p>
             </div>
 
+            {/* Numbers Section */}
             <div
-              className="numbers bg-black h-full p-6 text-white flex justify-sta items-center"
+              className="numbers grid grid-cols-2 gap-4 bg-gray-900 rounded-xl p-6 text-center"
               ref={numbersRef}
             >
-              <div className="text-center ">
-                <h3 className="md:text-6xl mb-3 font-bold text-orange-600">
+              <div>
+                <h3 className="text-3xl md:text-5xl font-bold text-orange-600">
                   {count1} %
                 </h3>
-                <p className="text-lg">Customer service inquiries</p>
+                <p className="text-sm md:text-lg">Customer service inquiries</p>
               </div>
-              <div className="text-center">
-                <h3 className="md:text-6xl mb-3 font-bold text-orange-600">
+              <div>
+                <h3 className="text-3xl md:text-5xl font-bold text-orange-600">
                   {count2} %
                 </h3>
-                <p className="text-lg">Using financial institutions</p>
+                <p className="text-sm md:text-lg">Using financial institutions</p>
               </div>
             </div>
           </div>
@@ -128,4 +128,4 @@ const AIPowerd = () => {
   );
 };
 
-export default AIPowerd;
+export default AIPowered;

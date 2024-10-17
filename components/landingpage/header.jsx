@@ -21,10 +21,10 @@ const NavBar = () => {
                 className="text-black text-lg font-bold sm:text-xl md:mr-16"
               >
                 <Image
-                  src="/assets/images/logo.webp"
+                  src="/assets/images/logo2.webp"
                   alt="logo"
-                  height={100}
-                  width={100}
+                  height={80}
+                  width={80}
                   className="h-auto w-auto max-w-[60px] sm:max-w-[80px] md:max-w-[100px] lg:max-w-[120px] transition-transform duration-300 ease-in-out hover:scale-105"
                 />
               </Link>
@@ -204,18 +204,16 @@ const NavBar = () => {
                 href="/sign-in"
                 className="relative ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-black rounded-[2rem] shadow-sm text-base font-semibold text-black overflow-hidden group  hover:text-white"
               >
-                <span className="absolute inset-0 bg-red-600 transform -translate-y-full transition-all duration-500 group-hover:translate-y-0  " />
+                <span className="absolute inset-0 bg-red-700 transform -translate-y-full transition-all duration-500 group-hover:translate-y-0  " />
                 <span className="relative z-10 ">Sign In</span>
               </Link>
               <Link
                 href="/sign-up"
                 className="relative ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-black rounded-[2rem] shadow-sm text-base font-semibold text-white bg-black overflow-hidden group  hover:text-white"
               >
-                <span className="absolute inset-0 bg-red-600 transform -translate-y-full transition-all duration-500 group-hover:translate-y-0  " />
+                <span className="absolute inset-0 bg-red-700 transform -translate-y-full transition-all duration-500 group-hover:translate-y-0  " />
                 <span className="relative z-10 ">Sign up</span>
               </Link>
-
-              
             </div>
           </div>
         </div>

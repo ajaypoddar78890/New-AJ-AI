@@ -12,8 +12,8 @@ export default function Home() {
       <Hero />
       <HoverCard />
       <Solution />
-      <Aipowerd />
       <Price />
+      <Aipowerd />
     </div>
   );
 }
