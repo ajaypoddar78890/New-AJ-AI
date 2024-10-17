@@ -4,6 +4,7 @@ import HoverCard from "@/components/landingpage/hover-cards";
 import Solution from "@/components/landingpage/solution";
 import Aipowerd from "@/components/landingpage/aipowerd";
 import Price from "@/components/landingpage/price";
+import FAQSection from "@/components/landingpage/faq";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Solution />
       <Price />
       <Aipowerd />
+      <FAQSection/>
     </div>
   );
 }
