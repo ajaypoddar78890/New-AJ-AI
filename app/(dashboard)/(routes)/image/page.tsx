@@ -1,34 +1,50 @@
-// UploadForm.js
-"use client"; // Ensure this component runs on the client side
+"use client"
 
-import { useState } from "react";
+import { useState } from 'react';
 
-export default function UploadForm() {
-  const [file, setFile] = useState(null);
+export default function ImageUploadPage() {
+    const [imageBase64, setImageBase64] = useState<string | null>(null);
 
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
-  };
+    const handleImageUpload = async (base64Image: string) => {
+        try {
+            const response = await fetch('/api/image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ imageBase64: base64Image }),
+            });
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
 
-    const formData = new FormData();
-    formData.append("file", file);
+            const data = await response.json();
+            console.log(data); // Handle the data as needed
+        } catch (error) {
+            console.error('Error uploading image:', error);
+        }
+    };
 
-    const response = await fetch("/api/image", {
-      method: "POST",
-      body: formData,
-    });
+    const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const base64 = reader.result?.toString().split(',')[1]; // Get base64 string without header
+                if (base64) {
+                    setImageBase64(base64);
+                    handleImageUpload(base64);
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+    };
 
-    const result = await response.json();
-    console.log(result);
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input type="file" onChange={handleFileChange} required />
-      <button type="submit">Upload</button>
-    </form>
-  );
+    return (
+        <div>
+            <h1>Upload an Image</h1>
+            <input type="file" onChange={handleFileChange} />
+        </div>
+    );
 }
