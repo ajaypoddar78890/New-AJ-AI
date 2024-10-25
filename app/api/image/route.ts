@@ -1,28 +1,28 @@
 import { NextResponse } from "next/server";
-import vision from "@google-cloud/vision";
+import Clarifai from "clarifai";
 
-// Create a client instance for Google Cloud Vision
-const client = new vision.ImageAnnotatorClient();
+// Initialize Clarifai client
+const clarifaiApp = new Clarifai.App({
+  apiKey: process.env.CLARIFAI_API_KEY,
+});
 
-// Handle POST requests
 export async function POST(req: Request) {
-  try {
-    const { imageBase64 } = await req.json(); // Parse the JSON body
-    const [result] = await client.objectLocalization({
-      image: { content: imageBase64 },
-    });
+  const { imageBase64 } = await req.json();
 
-    const objects = result.localizedObjectAnnotations.map((obj) => ({
-      name: obj.name,
-      score: obj.score,
+  try {
+    const response = await clarifaiApp.models.predict(
+      "general-image-recognition", // Change to your desired model
+      { base64: imageBase64 }
+    );
+
+    const concepts = response.outputs[0].data.concepts.map((concept: any) => ({
+      name: concept.name,
+      score: concept.value,
     }));
 
-    return NextResponse.json({ objects });
+    return NextResponse.json({ concepts });
   } catch (error) {
     console.error("Error processing image:", error);
-    return NextResponse.json(
-      { error: "Failed to process image" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Error processing image" }, { status: 500 });
   }
 }
