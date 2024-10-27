@@ -118,7 +118,9 @@ const AIPowered = () => {
                 <h3 className="text-3xl md:text-5xl font-bold text-orange-600">
                   {count2} %
                 </h3>
-                <p className="text-sm md:text-lg">Using financial institutions</p>
+                <p className="text-sm md:text-lg">
+                  Using financial institutions
+                </p>
               </div>
             </div>
           </div>
