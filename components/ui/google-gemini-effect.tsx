@@ -21,7 +21,7 @@ export const GoogleGeminiEffect = ({
 }) => {
   return (
     <div className={cn("sticky top-80  w-full] ", className)}>
-      <p className="text-lg md:text-7xl font-normal pb-4 md:pb-10 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
+      <p className="text-lg md:text-7xl font-semibold pb-4 md:pb-10 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
         {title || `Build with AJ-AI SASS`}
       </p>
       <p className="text-xs md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-4xl mx-auto">
