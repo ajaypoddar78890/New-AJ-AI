@@ -5,6 +5,7 @@ import Solution from "@/components/landingpage/solution";
 import Aipowerd from "@/components/landingpage/aipowerd";
 import Price from "@/components/landingpage/price";
 import FAQSection from "@/components/landingpage/faq";
+import { GoogleGeminiEffectDemo } from "@/components/landingpage/google";
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
       <Solution />
       <Price />
       <Aipowerd />
-      <FAQSection/>
+      <FAQSection />
+      <GoogleGeminiEffectDemo />
     </div>
   );
 }
