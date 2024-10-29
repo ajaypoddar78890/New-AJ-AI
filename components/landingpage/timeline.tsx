@@ -8,8 +8,8 @@ export function TimelineDemo() {
       title: "2024",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
+          <p className="text-neutral-800 font dark:text-neutral-200 text-xs md:text-xl   font-normal mb-8  ">
+            Built and launched your Website with AJ-Ai
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
