@@ -28,7 +28,6 @@ const Hero = () => {
         </div>
         <div className="buttonanimation hero-dashboard relative mx-auto h-[40vh]   md:h-[80vh] max-w-8xl mb-20  border-b ">
           <Image
-          
             src="/assets/images/hero-dashboard.webp"
             alt="Hero Dashboard"
             fill // Enables responsive behavior
