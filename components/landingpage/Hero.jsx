@@ -15,7 +15,7 @@ const Hero = () => {
             inventory management and supply chain operations.
           </p>
 
-          <div className=" buttonanimation flex  md:flex-row items-start  mt-5 gap-5 md:gap-5">
+          <div className=" buttonanimation flex md:mx-auto md:flex-row items-start  mt-5 gap-5 md:gap-5">
             <button className="relative  bg-black border border-black rounded-[50px] text-white py-4 px-4 md:py-5 md:px-12 overflow-hidden group font-semibold text-sm md:text-base">
               <span className="absolute inset-0 bg-red-700 transform -translate-y-full transition-all duration-500 group-hover:translate-y-0" />
               <span className="relative z-10">Get Started for free</span>
