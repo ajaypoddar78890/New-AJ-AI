@@ -7,6 +7,7 @@ import Price from "@/components/landingpage/price";
 import FAQSection from "@/components/landingpage/faq";
 import { GoogleGeminiEffectDemo } from "@/components/landingpage/google";
 import { TimelineDemo } from "@/components/landingpage/timeline";
+import Footer from "@/components/landingpage/footer";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <FAQSection />
       <GoogleGeminiEffectDemo />
       <TimelineDemo />
+      <Footer/>
     </div>
   );
 }
