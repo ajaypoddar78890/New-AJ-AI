@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Montserrat } from "next/font/google"; // Import Montserrat font
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import LenisScrollProvider from "./LenisScrollProvider"; // Import LenisScrollProvider
 
 // Local fonts
 const geistSans = localFont({
@@ -19,7 +20,7 @@ const geistMono = localFont({
 // Google font Montserrat
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "700"], // You can customize the weights as per your needs
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -38,6 +39,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} ${montserrat.className} antialiased`}
         >
+          <LenisScrollProvider /> {/* Add LenisScrollProvider */}
           {children}
         </body>
       </html>

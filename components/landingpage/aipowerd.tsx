@@ -105,7 +105,7 @@ const AIPowered = () => {
 
             {/* Numbers Section */}
             <div
-              className="numbers grid grid-cols-2 gap-4 bg-gray-900 rounded-xl p-6 text-center"
+              className="numbers grid grid-cols-2 gap-4 bg-gray-900 rounded-xl p-6 "
               ref={numbersRef}
             >
               <div>
