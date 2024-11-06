@@ -67,7 +67,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 md:p-6 overflow-hidden bg-black border dark:border-white/[0.8] group-hover:border-slate-100 relative z-20",
+        "rounded-2xl h-full w-full p-2 md:p-6 overflow-hidden bg-black border dark:border-white/[0.8] group-hover:border-slate-100 relative z-20",
         className
       )}
     >
@@ -87,7 +87,7 @@ export const CardTitle = ({
 }) => {
   return (
     <h3
-      className={cn("text-zinc-100 md:text-2xl  tracking-wide mt-4", className)}
+      className={cn("text-zinc-100  text-xl  font-bold md:text-2xl  tracking-normal mt-4", className)}
     >
       {children}
     </h3>
@@ -104,7 +104,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "mt-2 text-zinc-400 tracking-wide leading-tight text-md",
         className
       )}
     >

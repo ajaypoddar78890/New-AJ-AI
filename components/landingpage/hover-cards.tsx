@@ -4,8 +4,8 @@ export function CardHoverEffectDemo() {
   return (
     <div className="container-fluid bg-black py-5 md:py-10 ">
       <div className=" container   mx-auto px-8   ">
-        <div className="content text-center my-10 max-w-4xl mx-auto">
-          <h2 className="text-md md:text-6xl text-white font-bold">
+        <div className="content   mt-10 max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-6xl text-white font-bold">
             Core Features That Make It Valuable
           </h2>
         </div>

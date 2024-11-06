@@ -4,9 +4,9 @@ import { CheckCircle } from "lucide-react";
 
 const Solution = () => {
   return (
-    <div className="solution-section py-20 ">
-      <div className="container mx-auto px-10">
-        <div className="grid md:grid-cols-2 gap-16">
+    <div className="solution-section py-10 md:py-20 ">
+      <div className="container mx-auto px-5 md:px-10">
+        <div className="grid md:grid-cols-2 md:gap-16">
           {" "}
           <div className="left w-full h-auto">
             <Image
@@ -18,9 +18,9 @@ const Solution = () => {
               className="object-cover"
             />
           </div>
-          <div className="right w-full h-auto flex flex-col  pt-10 px-6 md:px-12  ">
+          <div className="right w-full h-auto flex flex-col  pt-5 md:pt-10 px-5 md:px-12  ">
             {" "}
-            <h2 className="text-2xl md:text-6xl   font-bold mb-8">
+            <h2 className="text-4xl md:text-6xl font-bold mb-5">
               Accessible to a wider audience
             </h2>
             <p className="text-lg font-medium mb-4">
@@ -37,7 +37,7 @@ const Solution = () => {
         <div className="grid md:grid-cols-2 gap-16 mt-10 md:mt-32">
           <div className="right w-full h-auto flex flex-col    px-6 md:px-12  ">
             {" "}
-            <h2 className="text-2xl md:text-6xl   font-bold mb-8">
+            <h2 className="text-4xl md:text-6xl   font-bold mb-8">
               Providing quick deploy solutions
             </h2>
             <p className="text-lg">
@@ -45,7 +45,7 @@ const Solution = () => {
               start benefiting from AI capabilities without lengthy setup and
               development times in fast-paced industries.
             </p>
-            <ul className="space-y-4 mt-10 font-semibold">
+            <ul className="space-y-4 mt-5 font-semibold">
               <li className="flex items-start ">
                 <CheckCircle className="text-black w-6 h-6 mr-3" />{" "}
                 {/* Check Icon */}
