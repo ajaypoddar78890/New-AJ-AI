@@ -55,11 +55,7 @@ export async function POST(req: Request) {
       // Check for properties on the candidate object
       /* eslint-disable no-unused-vars */
 
-      const generatedText =
-        candidate.text ||
-        candidate.content ||
-        candidate.output ||
-        "No text available"; // Fallback if no text found
+      const generatedText = candidate.content; // Fallback if no text found
       /* eslint-disable no-unused-vars */
 
       return new NextResponse(JSON.stringify({ response: generatedText }), {
