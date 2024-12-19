@@ -47,9 +47,8 @@ export async function POST(req: Request) {
       const candidate = result.response.candidates[0];
       console.log("Candidate:", JSON.stringify(candidate, null, 2)); // Log the candidate structure
 
-      // Disable unused-vars rule for this line
-      /* eslint-disable-next-line no-unused-vars */
-      const generatedText = candidate.content; // Fallback if no text found
+      // Use optional chaining to safely access the text or content property
+      const generatedText = candidate.content ?? "No text available"; // Use content if available, otherwise fallback to "No text available"
 
       return new NextResponse(JSON.stringify({ response: generatedText }), {
         status: 200,
