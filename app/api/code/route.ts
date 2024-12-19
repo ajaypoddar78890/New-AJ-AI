@@ -48,9 +48,9 @@ export async function POST(req: Request) {
       console.log("Candidate:", JSON.stringify(candidate, null, 2)); // Log the candidate structure
 
       // Use optional chaining to safely access the text or content property
-      const generatedText = candidate.content ?? "No text available"; // Use content if available, otherwise fallback to "No text available"
+      const generatedText = candidate.content ?? "No text available";
 
-      return new NextResponse(JSON.stringify({ response: generatedText }), {
+      return new NextResponse(JSON.stringify({}), {
         status: 200,
       });
     } else {
