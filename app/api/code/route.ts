@@ -20,11 +20,6 @@ export async function POST(req: Request) {
     const body = await req.json();
     const messages: Message[] = body.messages; // Explicitly typing messages
 
-    // Uncomment if user authentication is needed
-    // if (!userId) {
-    //   return new NextResponse("Unauthorized", { status: 401 });
-    // }
-
     if (!messages || messages.length === 0) {
       return new NextResponse("Messages are required", { status: 400 });
     }
@@ -52,11 +47,9 @@ export async function POST(req: Request) {
       const candidate = result.response.candidates[0];
       console.log("Candidate:", JSON.stringify(candidate, null, 2)); // Log the candidate structure
 
-      // Check for properties on the candidate object
-      /* eslint-disable no-unused-vars */
-
+      // Disable unused-vars rule for this line
+      /* eslint-disable-next-line no-unused-vars */
       const generatedText = candidate.content; // Fallback if no text found
-      /* eslint-disable no-unused-vars */
 
       return new NextResponse(JSON.stringify({ response: generatedText }), {
         status: 200,
