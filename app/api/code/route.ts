@@ -1,6 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai"; // Correct import for Google Generative AI
 import { NextResponse } from "next/server";
- 
 
 // Define a Message type
 interface Message {
@@ -44,15 +43,24 @@ export async function POST(req: Request) {
     console.log("API Result:", JSON.stringify(result, null, 2)); // Log the entire result
 
     // Check if there are candidates
-    if (result.response.candidates && result.response.candidates.length > 0) {
+    if (
+      result.response &&
+      result.response.candidates &&
+      result.response.candidates.length > 0
+    ) {
       // Inspect the candidate structure
       const candidate = result.response.candidates[0];
       console.log("Candidate:", JSON.stringify(candidate, null, 2)); // Log the candidate structure
 
-      // Assuming the text property exists on the candidate object
-      // Change this according to the actual structure
+      // Check for properties on the candidate object
+      /* eslint-disable no-unused-vars */
+
       const generatedText =
-        candidate || candidate.content || "No text available"; // Fallback if no text found
+        candidate.text ||
+        candidate.content ||
+        candidate.output ||
+        "No text available"; // Fallback if no text found
+      /* eslint-disable no-unused-vars */
 
       return new NextResponse(JSON.stringify({ response: generatedText }), {
         status: 200,
