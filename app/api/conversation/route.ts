@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai"; // Correct import for Google Generative AI
 import { NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs/server";
+// import { auth } from "@clerk/nextjs/server";
 
 // Define a Message type
 interface Message {
@@ -18,7 +18,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINIKEY); // Use your Google 
 
 export async function POST(req: Request) {
   try {
-    const { userId } = auth(); // Clerk authentication, can be skipped if not needed
+    // const { userId } = auth(); // Clerk authentication, can be skipped if not needed
 
     const body = await req.json();
     const messages: Message[] = body.messages; // Explicitly typing messages

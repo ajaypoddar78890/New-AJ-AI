@@ -64,7 +64,7 @@ const Page = () => {
       }
 
       form.reset();
-    } catch (error: unknown) {
+    } catch {
       setMessages((prev) => [
         {
           role: "assistant",

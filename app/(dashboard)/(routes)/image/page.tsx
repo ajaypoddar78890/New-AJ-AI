@@ -2,9 +2,19 @@
 import { useState } from "react";
 import Image from "next/image";
 
+// Define types
+interface Concept {
+  name: string;
+  score: number;
+}
+
+interface Results {
+  concepts: Concept[];
+}
+
 export default function ImageUpload() {
   const [image, setImage] = useState<File | null>(null);
-  const [results, setResults] = useState<any>(null);
+  const [results, setResults] = useState<Results | null>(null);
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -22,7 +32,7 @@ export default function ImageUpload() {
             body: JSON.stringify({ imageBase64: base64data }),
           });
 
-          const data = await res.json();
+          const data: Results = await res.json();
           setResults(data);
         }
       };
@@ -62,14 +72,13 @@ export default function ImageUpload() {
         <div className="bg-gray-100 p-4 rounded shadow-md w-full max-w-lg">
           <h3 className="text-xl font-semibold mb-2">Results:</h3>
           <ul className="list-disc list-inside">
-            {results.concepts.map((concept: any, index: number) => (
+            {results.concepts.map((concept, index) => (
               <li key={index} className="mb-1">
                 <strong>{concept.name}</strong> (Confidence:{" "}
                 {(concept.score * 100).toFixed(2)}%)
               </li>
             ))}
           </ul>
-          {/* Add additional details if available */}
           <div className="mt-4">
             <h4 className="text-lg font-semibold">Additional Details:</h4>
             <p>

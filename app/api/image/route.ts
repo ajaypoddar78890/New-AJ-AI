@@ -10,12 +10,12 @@ export async function POST(req: Request) {
   const { imageBase64 } = await req.json();
 
   try {
-    const response = await clarifaiApp.models.predict(
+    const response: ClarifaiResponse = await clarifaiApp.models.predict(
       "general-image-recognition", // Change to your desired model
       { base64: imageBase64 }
     );
 
-    const concepts = response.outputs[0].data.concepts.map((concept: any) => ({
+    const concepts = response.outputs[0].data.concepts.map((concept) => ({
       name: concept.name,
       score: concept.value,
     }));
@@ -23,6 +23,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ concepts });
   } catch (error) {
     console.error("Error processing image:", error);
-    return NextResponse.json({ error: "Error processing image" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Error processing image" },
+      { status: 500 }
+    );
   }
 }
