@@ -21,7 +21,7 @@ export default function Home() {
       <FAQSection />
       <GoogleGeminiEffectDemo />
       <TimelineDemo />
-      <Footer/>
+      <Footer />
     </div>
   );
 }
