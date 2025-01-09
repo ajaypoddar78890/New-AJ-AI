@@ -1,58 +1,11 @@
 "use client";
 
-import  { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion"; // For animation
 
 const AIPowered = () => {
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
   const numbersRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            startCounters(); // Start the counter animation
-            observer.unobserve(entry.target); // Stop observing once animated
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    if (numbersRef.current) {
-      observer.observe(numbersRef.current);
-    }
-
-    return () => {
-      if (numbersRef.current) {
-        observer.unobserve(numbersRef.current);
-      }
-    };
-  }, []);
-
-  const startCounters = () => {
-    animateCounter(setCount1, 0, Math.floor(0.92 * 100), 2000); // Animate count1 to 92%
-    animateCounter(setCount2, 0, Math.floor(0.75 * 100), 2000); // Animate count2 to 75%
-  };
-
-  const animateCounter = (setter, start, end, duration) => {
-    let startTime = null;
-
-    const step = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      setter(Math.floor(progress * (end - start) + start));
-
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-
-    window.requestAnimationFrame(step);
-  };
 
   return (
     <div className="aipowered-section px-5 py-10 md:px-10">
@@ -109,15 +62,11 @@ const AIPowered = () => {
               ref={numbersRef}
             >
               <div>
-                <h3 className="text-3xl md:text-5xl font-bold text-orange-600">
-                  {count1} %
-                </h3>
+                <h3 className="text-3xl md:text-5xl font-bold text-orange-600"></h3>
                 <p className="text-sm md:text-lg">Customer service inquiries</p>
               </div>
               <div>
-                <h3 className="text-3xl md:text-5xl font-bold text-orange-600">
-                  {count2} %
-                </h3>
+                <h3 className="text-3xl md:text-5xl font-bold text-orange-600"></h3>
                 <p className="text-sm md:text-lg">
                   Using financial institutions
                 </p>
