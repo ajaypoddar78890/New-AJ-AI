@@ -54,7 +54,7 @@ export async function POST(req: Request) {
       // Assuming the text property exists on the candidate object
       // Change this according to the actual structure
       const generatedText =
-        candidate.text || candidate.content || "No text available"; // Fallback if no text found
+        candidate || candidate.content || "No text available"; // Fallback if no text found
 
       return new NextResponse(JSON.stringify({ response: generatedText }), {
         status: 200,
