@@ -2,23 +2,31 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 
+type FAQ = {
+  question: string;
+  answer: string;
+};
+
 const FAQSection = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const [height, setHeight] = useState(0);
-  const contentRefs = useRef([]);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [height, setHeight] = useState<number>(0);
+  const contentRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   // Toggle FAQ answer visibility
-  const toggleAccordion = (index) => {
+  const toggleAccordion = (index: number) => {
     if (activeIndex === index) {
       setActiveIndex(null);
       setHeight(0);
     } else {
+      const targetElement = contentRefs.current[index];
+      if (targetElement) {
+        setHeight(targetElement.scrollHeight); // Set the height to match the content
+      }
       setActiveIndex(index);
-      setHeight(contentRefs.current[index].scrollHeight); // Set the height to match the content
     }
   };
 
-  const faqs = [
+  const faqs: FAQ[] = [
     {
       question: "What is your return policy?",
       answer: "You can return any item within 30 days for a full refund.",
@@ -88,7 +96,7 @@ const FAQSection = () => {
                   height: activeIndex === index ? `${height}px` : "0",
                 }}
               >
-                <div className="py-2 text-gray-600 ">{faq.answer}</div>
+                <div className="py-2 text-gray-600">{faq.answer}</div>
               </div>
             </div>
           ))}
