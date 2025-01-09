@@ -90,6 +90,8 @@ const FAQSection = () => {
 
               {/* Accordion content with smooth transition */}
               <div
+                // @ts-expect-error TypeScript doesn't recognize `scrollHeight` because it cannot guarantee the type of the element.
+
                 ref={(el) => (contentRefs.current[index] = el)} // Capture ref for height calculations
                 className="overflow-hidden transition-all duration-300"
                 style={{
