@@ -6,14 +6,22 @@
 //   role: "user" | "assistant"; // Define roles explicitly
 //   content: string; // Message content
 // }
+// // import { GoogleGenerativeAI } from "@google/generative-ai"; // Correct import for Google Generative AI
+// // import { NextResponse } from "next/server";
 
-// // Ensure GEMINIKEY is defined
-// if (!process.env.GEMINIKEY) {
-//   throw new Error("GEMINIKEY is not defined");
-// }
+// // // Define a Message type
+// // interface Message {
+// //   role: "user" | "assistant"; // Define roles explicitly
+// //   content: string; // Message content
+// // }
 
-// // Pass the API key directly as a string
-// const genAI = new GoogleGenerativeAI(process.env.GEMINIKEY); // Use your Google Gemini API key
+// // // Ensure GEMINIKEY is defined
+// // if (!process.env.GEMINIKEY) {
+// //   throw new Error("GEMINIKEY is not defined");
+// // }
+
+// // // Pass the API key directly as a string
+// // const genAI = new GoogleGenerativeAI(process.env.GEMINIKEY); // Use your Google Gemini API key
 
 // export async function POST(req: Request) {
 //   try {
@@ -25,22 +33,22 @@
 //     //   return new NextResponse("Unauthorized", { status: 401 });
 //     // }
 
-//     if (!messages || messages.length === 0) {
-//       return new NextResponse("Messages are required", { status: 400 });
-//     }
+// //     if (!messages || messages.length === 0) {
+// //       return new NextResponse("Messages are required", { status: 400 });
+// //     }
 
-//     // Using the `getGenerativeModel` method to generate content
-//     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); // Ensure you're using the right model
+// //     // Using the `getGenerativeModel` method to generate content
+// //     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); // Ensure you're using the right model
 
-//     // Prepare the prompt
-//     const prompt = messages
-//       .map((msg) => `${msg.role}: ${msg.content}`)
-//       .join("\n"); // Format messages into a single prompt
+// //     // Prepare the prompt
+// //     const prompt = messages
+// //       .map((msg) => `${msg.role}: ${msg.content}`)
+// //       .join("\n"); // Format messages into a single prompt
 
-//     const result = await model.generateContent(prompt);
+// //     const result = await model.generateContent(prompt);
 
-//     // Log the result for debugging
-//     console.log("API Result:", JSON.stringify(result, null, 2)); // Log the entire result
+// //     // Log the result for debugging
+// //     console.log("API Result:", JSON.stringify(result, null, 2)); // Log the entire result
 
 //     // Check if there are candidates
 //     if (result.response.candidates && result.response.candidates.length > 0) {
